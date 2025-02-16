@@ -1,0 +1,17 @@
+<div class="layout-topbar">
+  <div class="layout-topbar-container">
+    <div class="topbar-logo">
+      <a href="/">
+        <i class="pi pi-prime" style="font-size: 2rem;"></i>
+        <span style="font-size: 2.5rem;">HCHAO</span>
+      </a>
+    </div>
+    <ul class="topbar-items">
+      @for (item of menuItems(); track $index) {
+      <li>
+        <a [href]="item.url">{{ item.label }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
