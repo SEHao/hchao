@@ -29,8 +29,9 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - uses: oven-sh/setup-bun@v2
 
-      - run: npm ci --legacy-peer-deps
+      - run: bun install
       - run: npx cypress install
       - uses: nrwl/nx-set-shas@v4
 
