@@ -1,3 +1,5 @@
+import { ButtonModule } from 'primeng/button';
+
 import { CommonModule } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -6,7 +8,7 @@ import { NavMenuItem } from '../models/nav-menu-item';
 
 @Component({
   selector: 'lib-sidebar-layout',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ButtonModule],
   templateUrl: './sidebar-layout.component.html',
   styleUrl: './sidebar-layout.component.scss',
 })
