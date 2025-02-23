@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ToolsComponent } from './tools/tools.component';
 
 export const appRoutes: Route[] = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
   { path: 'tools', component: ToolsComponent },
 ];

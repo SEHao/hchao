@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
-export interface StackedLayoutMenuItem {
-  label: string;
-  url: string;
-}
+import { NavMenuItem } from '../models/nav-menu-item';
 
 @Component({
   selector: 'lib-stacked-layout',
@@ -13,5 +10,5 @@ export interface StackedLayoutMenuItem {
   styleUrl: './stacked-layout.component.scss',
 })
 export class StackedLayoutComponent {
-  menuItems = input<StackedLayoutMenuItem[]>([]);
+  menuItems = input<NavMenuItem[]>([]);
 }

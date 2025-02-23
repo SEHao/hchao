@@ -1,3 +1,5 @@
+import { NavMenuItem } from 'libs/shared/ui/src/lib/layout/models/nav-menu-item';
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SidebarLayoutComponent } from '@hchao/shared/ui';
@@ -8,4 +10,9 @@ import { SidebarLayoutComponent } from '@hchao/shared/ui';
   templateUrl: './tools.component.html',
   styleUrl: './tools.component.scss',
 })
-export class ToolsComponent {}
+export class ToolsComponent {
+  navMenuItems: NavMenuItem[] = [
+    { label: 'Home', url: '/home' },
+    { label: 'Tools', url: '/tools' },
+  ];
+}

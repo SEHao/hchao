@@ -1,1 +1,42 @@
-<p>sidebar-layout works!</p>
+<div class="flex h-screen bg-gray-100">
+  <nav
+    class="fixed inset-y-0 left-0 z-50 flex w-64 -translate-x-full transform flex-col bg-white shadow-lg transition-transform duration-300 ease-in-out md:relative md:w-64 md:translate-x-0"
+    [class.translate-x-0]="isSidebarOpen()"
+  >
+    <div class="flex items-center justify-between p-4 text-xl font-bold">
+      <a href="/">
+        <span class="font-light">SE</span>
+        <span class="font-bold">HAO</span>
+      </a>
+      <button class="p-2 md:hidden" (click)="toggleSidebar()">X</button>
+    </div>
+    <ul>
+      @for (navMenuItem of navMenuItems(); track $index) {
+        <li>
+          <a
+            [routerLink]="navMenuItem.url"
+            routerLinkActive="bg-gray-300"
+            class="block cursor-pointer p-4 transition duration-200 hover:bg-gray-200"
+            (click)="toggleSidebar()"
+          >
+            {{ navMenuItem.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+  <div
+    *ngIf="isSidebarOpen()"
+    class="fixed inset-0 bg-black bg-opacity-50 transition-opacity md:hidden"
+    (click)="toggleSidebar()"
+    aria-hidden="true"
+  ></div>
+  <div class="flex flex-1 flex-col">
+    <header class="flex items-center bg-white p-4 shadow md:hidden">
+      <button (click)="toggleSidebar()" class="p-2">☰</button>
+    </header>
+    <main class="flex-1 p-6">
+      <ng-content></ng-content>
+    </main>
+  </div>
+</div>

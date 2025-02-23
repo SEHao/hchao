@@ -1,19 +1,18 @@
+import { NavMenuItem } from 'libs/shared/ui/src/lib/layout/models/nav-menu-item';
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  StackedLayoutComponent,
-  StackedLayoutMenuItem,
-} from '@hchao/shared/ui';
+import { SidebarLayoutComponent } from '@hchao/shared/ui';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, StackedLayoutComponent],
+  imports: [CommonModule, SidebarLayoutComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  menuItems: StackedLayoutMenuItem[] = [
-    { label: 'Home', url: '/' },
-    { label: 'Tools', url: '/tools' }
+  navMenuItems: NavMenuItem[] = [
+    { label: 'Home', url: '/home' },
+    { label: 'Tools', url: '/tools' },
   ];
 }
