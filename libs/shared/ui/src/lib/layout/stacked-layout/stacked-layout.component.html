@@ -1,12 +1,12 @@
-<div class="layout-topbar">
-  <div class="layout-topbar-container">
-    <div class="topbar-logo">
+<div class="flex top-0 left-0 z-50 menu-bar-border">
+  <div class="w-full h-16 px-4 md flex items-center justify-between">
+    <div class="me-16">
       <a href="/">
-        <i class="pi pi-prime" style="font-size: 2rem;"></i>
-        <span style="font-size: 2.5rem;">HCHAO</span>
+        <span class="font-light">SE</span>
+        <span class="font-bold">HAO</span>
       </a>
     </div>
-    <ul class="topbar-items">
+    <ul class="flex items-center gap-2">
       @for (item of menuItems(); track $index) {
       <li>
         <a [href]="item.url">{{ item.label }}</a>

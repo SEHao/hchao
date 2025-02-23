@@ -12,5 +12,8 @@ import {
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  menuItems: StackedLayoutMenuItem[] = [{ label: 'Home', url: '/' }];
+  menuItems: StackedLayoutMenuItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Tools', url: '/tools' }
+  ];
 }
